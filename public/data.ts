@@ -1,4 +1,5 @@
-export const data = [
+import { Item } from "../src/interfaces/types";
+export const data: Item[] = [
   {
     id: 1,
     image: [

@@ -10,7 +10,7 @@ export default function Home() {
       <NavBar />
       <SearchBar />
       <CategoriesSlide />
-      <div className="flex m-4">
+      <div className="m-4">
         <CardIndex />
       </div>
     </div>

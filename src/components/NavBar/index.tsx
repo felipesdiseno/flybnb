@@ -12,8 +12,9 @@ export default function NavBar() {
       style={{ height: "80px", maxWidth: "1200px" }}
     >
       <Link href="/">
-        <div className="cursor-pointer">
-          <Image src="/images/flogo.svg" alt="Logo" width={118} height={64} />
+        <div className="cursor-pointer flex flex-row text-red-500 items-end">
+          <h1 className="text-4xl mr-2 font-bold font-family-serif">F</h1>
+          <h2 className="text-3xl ">Flybnb</h2>
         </div>
       </Link>
       <div className="flex items-center space-x-4">
