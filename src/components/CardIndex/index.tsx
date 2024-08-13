@@ -4,36 +4,31 @@ import { FaArrowUpFromBracket } from "react-icons/fa6";
 import { data } from "../../../public/data";
 import ShareExperience from "../ShareExperience";
 import { Item } from "../../interfaces/types";
-import Modal from "react-modal";
-
-Modal.setAppElement("#__next"); // Ajusta este selector según tu estructura de DOM
 
 function CardIndex() {
   const [selectedItem, setSelectedItem] = useState<Item | null>(null);
-  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const handleShowDetails = (item: Item) => {
     setSelectedItem(item);
-    setModalIsOpen(true);
   };
 
-  const closeModal = () => {
-    setModalIsOpen(false);
+  const closeDetails = () => {
+    setSelectedItem(null);
   };
 
   return (
-    <div>
+    <div className="relative">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
         {data.map((item: Item) => (
           <div
             key={item.id}
-            className="relative mb-6 bg-white rounded overflow-hidden shadow-lg p-4"
+            className="relative mb-6 bg-none rounded overflow-hidden p-4"
           >
-            <div className="relative">
+            <div className="relative w-64 h-72">
               <img
                 src={item.image[0]}
                 alt={item.title}
-                className="rounded-lg w-full"
+                className="rounded-lg h-full object-cover"
               />
               <div
                 className="absolute top-2 right-2 bg-white p-1 rounded-full cursor-pointer"
@@ -58,18 +53,17 @@ function CardIndex() {
       </div>
 
       {selectedItem && (
-        <Modal
-          isOpen={modalIsOpen}
-          onRequestClose={closeModal}
-          contentLabel="Share Experience Modal"
-          className="modal"
-          overlayClassName="overlay"
-        >
-          <button onClick={closeModal} className="close-button">
-            &times;
-          </button>
-          <ShareExperience item={selectedItem} />
-        </Modal>
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg relative">
+            <button
+              onClick={closeDetails}
+              className="absolute top-2 right-2 text-gray-600"
+            >
+              &times;
+            </button>
+            <ShareExperience item={selectedItem} />
+          </div>
+        </div>
       )}
     </div>
   );

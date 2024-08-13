@@ -17,6 +17,10 @@ export default function RootLayout({
   }, []);
   return (
     <html lang="en">
+      <head>
+        <title>Flybnb</title>
+        <link rel="icon" href="../../public/ficon.svg" />
+      </head>
       <body id="__next" className={inter.className}>
         {children}
       </body>

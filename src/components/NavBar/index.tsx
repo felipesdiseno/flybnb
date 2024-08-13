@@ -19,30 +19,27 @@ export default function NavBar() {
       </Link>
       <div className="flex items-center space-x-4">
         <Link href="/estadias">
-          <div className="text-lg cursor-pointer">Estadías</div>
+          <div className=" bg-none text-lg cursor-pointer text-gray-600 hover:text-gray-800 hover:bg-gray-50 rounded-full p-2">
+            Estadías
+          </div>
         </Link>
         <Link href="/experiencias">
-          <div className="text-lg cursor-pointer">Experiencias</div>
+          <div className="bg-none text-lg cursor-pointer text-gray-600 hover:text-gray-800 hover:bg-gray-50 rounded-full p-2">
+            Experiencias
+          </div>
         </Link>
       </div>
-      <div className="flex items-center space-x-4">
-        <h1>Pon tu espacio en Flybnb</h1>
-        <div
-          className="flex justify-center items-center"
-          style={{ width: "46px", height: "42px" }}
-        >
-          <TbWorld style={{ width: "16px", height: "16px" }} />
+      <div className="flex items-center space-x-4 ">
+        <div className=" p-2 bg-none text-lg cursor-pointer text-gray-600 hover:text-gray-800 hover:bg-gray-50 rounded-full ">
+          <h1>Pon tu espacio en Flybnb</h1>
+        </div>
+        <div className=" w-10 h-10 cursor-pointer rounded-full flex justify-center items-center bg-none hover:bg-gray-100  ">
+          <TbWorld className="h-4 w-4 " strokeWidth={1} />
         </div>
         <Link href="/login">
-          <div
-            className="flex items-center border-gray-400 border-2 rounded-full p-2 space-x-2"
-            style={{ width: "86px", height: "48px" }}
-          >
-            <GiHamburgerMenu style={{ width: "16px", height: "16px" }} />
-            <FaUserCircle
-              className="text-3xl"
-              style={{ width: "32px", height: "32px" }}
-            />
+          <div className=" w-20 h-12 text-gray-500 flex items-center justify-center border-gray-200 border-1 rounded-full p-2 space-x-2 cursor-pointer hover:shadow-md">
+            <GiHamburgerMenu className="h-3 w-3" />
+            <FaUserCircle className="text-3xl" />
           </div>
         </Link>
       </div>
